@@ -1,14 +1,13 @@
+using log4net.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Roulette.Core.Bet.Services;
 using Roulette.Core.Context;
-using Roulette.Core.Services;
+using System.IO;
 
 namespace Roulette.Api
 {
@@ -17,6 +16,11 @@ namespace Roulette.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var log4NetConfig = new FileInfo("log4net.config");
+            XmlConfigurator.Configure(log4NetConfig);
+
+            //var logger = LogManager.GetLogger(typeof(Program));
+            //logger.Info("Roulette API is starting");
         }
 
         public IConfiguration Configuration { get; }
@@ -32,8 +36,9 @@ namespace Roulette.Api
             });
 
             services.AddDbContext<RouletteDbContext>();
+            
 
-            services.AddScoped<PlayerService>();
+            services.AddScoped<BettingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
