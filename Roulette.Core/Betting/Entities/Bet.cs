@@ -1,7 +1,8 @@
-﻿using Roulette.Core.Bet.Enums;
+﻿using Roulette.Core.Betingt.Entities;
+using Roulette.Core.Betting.Enums;
 using System;
 
-namespace Roulette.Core.Bet.Entities
+namespace Roulette.Core.Betting.Entities
 {
     public class Bet
     {

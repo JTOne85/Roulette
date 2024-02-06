@@ -1,10 +1,10 @@
-﻿using Moq;
+﻿using System.Threading.Tasks;
+using Moq;
 using Roulette.Api.Controllers;
-using Roulette.Core.Bet;
-using Roulette.Core.Bet.Enums;
-using Roulette.Core.Bet.Services;
+using Roulette.Core.Betting;
+using Roulette.Core.Betting.Enums;
+using Roulette.Core.Betting.Services;
 using Roulette.Core.Context;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Roulette.Test
@@ -15,8 +15,8 @@ namespace Roulette.Test
         public async Task PlaceBetTest()
         {
             // Arrange
-            var context = new Mock<RouletteDbContext> ();
-            
+            var context = new Mock<RouletteDbContext>();
+
             var bettingService = new BettingService(context.Object);
             var controller = new BettingController(bettingService);
             var betType = BetType.Inside;

@@ -1,4 +1,4 @@
-﻿namespace Roulette.Core.Bet.Enums
+﻿namespace Roulette.Core.Betting.Enums
 {
     public enum BetType
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Roulette.Core.Bet.Entities;
-using Roulette.Core.Bet.Services;
+using Roulette.Core.Betting.Entities;
+using Roulette.Core.Betting.Services;
 using System.Threading.Tasks;
 
 namespace Roulette.Api.Controllers

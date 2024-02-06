@@ -5,7 +5,7 @@ namespace Roulette.Core.Context
 {
     public class RouletteDbContext : DbContext
     {
-        public DbSet<Bet.Entities.Bet> Bets { get; set; }
+        public DbSet<Betting.Entities.Bet> Bets { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

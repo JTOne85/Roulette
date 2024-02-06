@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Roulette.Core.Bet.Entities
+namespace Roulette.Core.Betting.Entities
 {
     public class PickDetails
     {

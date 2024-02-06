@@ -1,9 +1,9 @@
-﻿using Roulette.Core.Bet.Enums;
-using System;
+﻿using System;
+using Roulette.Core.Betting.Enums;
+using Roulette.Core.Betting.Entities;
+using Roulette.Core.Betingt.Entities;
 
-using Roulette.Core.Bet.Entities;
-
-namespace Roulette.Core.Bet
+namespace Roulette.Core.Betting
 {
     public static class BetBuilder
     {
@@ -13,7 +13,7 @@ namespace Roulette.Core.Bet
             else return 1m;
         }
 
-        public static Entities.Bet BuildBet(BetType betType, string pick, decimal betValue)
+        public static Betting.Entities.Bet BuildBet(BetType betType, string pick, decimal betValue)
         {
             switch (betType)
             {
@@ -37,11 +37,6 @@ namespace Roulette.Core.Bet
                 Pick = CreatePick(BetType.Inside, pick)
             };
         }
-
-        //public static Entities.Bet BuildOutsideBet(string pick)
-        //{
-        //    return new Entities.Bet();
-        //}
 
         private static Pick CreatePick(BetType betType, string pick)
         {

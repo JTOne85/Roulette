@@ -1,7 +1,8 @@
-﻿using Roulette.Core.Bet.Enums;
+﻿using Roulette.Core.Betting.Entities;
+using Roulette.Core.Betting.Enums;
 using System;
 
-namespace Roulette.Core.Bet.Entities
+namespace Roulette.Core.Betingt.Entities
 {
     public class Pick
     {

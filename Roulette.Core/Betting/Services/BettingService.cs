@@ -1,8 +1,9 @@
-﻿using Roulette.Core.Context;
+﻿using Roulette.Core.Betting.Entities;
+using Roulette.Core.Context;
 using System;
 using System.Threading.Tasks;
 
-namespace Roulette.Core.Bet.Services
+namespace Roulette.Core.Betting.Services
 {
     public class BettingService
     {
@@ -14,7 +15,7 @@ namespace Roulette.Core.Bet.Services
             _context = context;
         }
 
-        public async Task<string> PlaceBet(Entities.Bet bet)
+        public async Task<string> PlaceBet(Bet bet)
         {
             try
             {
