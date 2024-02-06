@@ -1,4 +1,3 @@
-using log4net.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -7,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Roulette.Core.Bet.Services;
 using Roulette.Core.Context;
-using System.IO;
+
 
 namespace Roulette.Api
 {
@@ -15,12 +14,7 @@ namespace Roulette.Api
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
-            var log4NetConfig = new FileInfo("log4net.config");
-            XmlConfigurator.Configure(log4NetConfig);
-
-            //var logger = LogManager.GetLogger(typeof(Program));
-            //logger.Info("Roulette API is starting");
+            Configuration = configuration;            
         }
 
         public IConfiguration Configuration { get; }
